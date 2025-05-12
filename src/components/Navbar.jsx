@@ -10,8 +10,8 @@ const navItem = ["Nexus", "The Vault", "Prologue", "About", "Contact"];
 const Navbar = () => {
   const navRef = useRef(null);
   const audioElRef = useRef(null);
-  const [isAudioPlaying, setisAudioPlaying] = useState(false);
-  const [isIndicatorActive, setisIndicatorActive] = useState(false);
+  const [isAudioPlaying, setisAudioPlaying] = useState(true);
+  const [isIndicatorActive, setisIndicatorActive] = useState(true);
   const [lastScrollY, setlastScrollY] = useState(0);
   const [isNavVisible, setisNavVisible] = useState(true);
   const toggleAudio = () => {
@@ -36,6 +36,8 @@ const Navbar = () => {
     setlastScrollY(currScrollY);
   }, [currScrollY, lastScrollY]);
 
+
+
   useEffect(() => {
     if (isAudioPlaying) {
       audioElRef.current.play();
@@ -49,7 +51,7 @@ const Navbar = () => {
       y: isNavVisible ? 0 : -100,
       opacity: isNavVisible ? 1 : 0,
       duration: 0.3,
-      ease: 'power1.out'
+      ease: "power1.out",
     });
   }, [isNavVisible]);
   return (
@@ -100,6 +102,7 @@ const Navbar = () => {
                 className="hidden"
                 src="/audio/loop.mp3"
                 loop
+                autoPlay
               />
               {[1, 2, 3, 4].map((val) => (
                 <div
