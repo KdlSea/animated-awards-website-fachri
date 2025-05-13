@@ -10,8 +10,8 @@ const navItem = ["Nexus", "The Vault", "Prologue", "About", "Contact"];
 const Navbar = () => {
   const navRef = useRef(null);
   const audioElRef = useRef(null);
-  const [isAudioPlaying, setisAudioPlaying] = useState(true);
-  const [isIndicatorActive, setisIndicatorActive] = useState(true);
+  const [isAudioPlaying, setisAudioPlaying] = useState(false);
+  const [isIndicatorActive, setisIndicatorActive] = useState(false);
   const [lastScrollY, setlastScrollY] = useState(0);
   const [isNavVisible, setisNavVisible] = useState(true);
   const toggleAudio = () => {
